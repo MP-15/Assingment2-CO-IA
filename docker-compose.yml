@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: server
+    volumes:
+      - servervol:/serverdata
+    networks:
+      - assignment2_network
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    container_name: client
+    volumes:
+      - clientvol:/clientdata
+    networks:
+      - assignment2_network
+      
+volumes:
+  servervol:
+  clientvol:
+
+networks:
+  assignment2_network:
+    driver: host
