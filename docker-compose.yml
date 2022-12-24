@@ -27,4 +27,4 @@ volumes:
 
 networks:
   assignment2_network:
-    driver: host
+    driver: host 
